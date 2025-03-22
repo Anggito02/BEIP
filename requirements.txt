@@ -3,4 +3,4 @@ numpy
 pandas
 faker
 folium
-streamlit_folium
+streamlit_foliu

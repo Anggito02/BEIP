@@ -7,8 +7,8 @@ from streamlit_folium import st_folium
 ORS_API_KEY = "5b3ce3597851110001cf6248004b6629175246d3ba57e3cbefcd5550"
 
 # Define Lat, Lon
-latitude = -6.2088  # Example: Jakarta
-longitude = 106.8456
+latitude = -6.166276827  # Example: Jakarta
+longitude = 106.8196606
 range = [0, 500]
 
 # Fetch Isochrone from OpenRouteService
