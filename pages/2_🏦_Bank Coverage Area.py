@@ -1,11 +1,9 @@
-import numpy as np
 import pandas as pd
 import streamlit as st
 
-import pydeck as pdk
 import folium
 from streamlit_folium import st_folium
-from folium.plugins import MarkerCluster, MeasureControl, Fullscreen
+from folium.plugins import MeasureControl, Fullscreen
 
 import os
 import requests
@@ -33,7 +31,7 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-OUTLET_DATA = "./data/outlets.csv"
+OUTLET_DATA = os.getenv('OUTLET_DATA')
 
 def _read_data():
     df = pd.read_csv(OUTLET_DATA, delimiter=";", dtype={"Lat": str, "Lon": str})
@@ -315,11 +313,11 @@ if __name__ == '__main__':
     event = _show_raw(data)
     
     # Create a tab layout
-    tab2, tab3 = st.tabs(["5Km Radius Map", "Road Network Service Area"])
+    tab1, tab2 = st.tabs(["5Km Radius Map", "Road Network Service Area"])
         
-    with tab2:
+    with tab1:
         _foliumMap(event, data)
         
-    with tab3:
+    with tab2:
         max_dist = st.slider("Service Area Distance (km)", 1, 10, 5, 1)
         _foliumMapRad(data, max_dist)
