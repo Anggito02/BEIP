@@ -5,3 +5,4 @@ faker
 folium
 streamlit_folium
 dotenv
+plotly
