@@ -4,3 +4,4 @@ pandas
 faker
 folium
 streamlit_folium
+dotenv
